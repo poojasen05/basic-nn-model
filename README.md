@@ -91,7 +91,7 @@ ai_brain = Sequential({
 })
 
 ai_brain.compile(optimizer = 'rmsprop', loss='mse')
- ai_brain.fit(X_train1,y_train,epochs =70)
+ai_brain.fit(X_train1,y_train,epochs =70)
 
 loss_df=pd.DataFrame(ai_brain.history.history)
 loss_df.plot()
@@ -99,11 +99,16 @@ loss_df.plot()
 X_test1 = Scaler.transform(X_test)
 ai_brain.evaluate(X_test1,y_test)
 
-X_n1 = [[1]]
+X_n1 = [[2]]
 
-X_n1_5 = Scaler.transform(X_n1)
+X_n1_1 = Scaler.transform(X_n1)
 
-ai_brain.predict(X_n1_5)
+ai_brain.predict(X_n1_1)
+X_test1 = Scaler.transform(X_test)
+ai_brain.evaluate(X_test1,y_test)
+X_n1 = [[2]]
+X_n1_1 = Scaler.transform(X_n1)
+ai_brain.predict(X_n1_1)
 
 
 
@@ -116,19 +121,22 @@ ai_brain.predict(X_n1_5)
 ## OUTPUT
 
 ### Training Loss Vs Iteration Plot
-![Screenshot 2024-09-09 104056](https://github.com/user-attachments/assets/e855ee64-90a9-4c5c-852a-9ff01ddcd94b)
 
+
+![Screenshot 2024-09-09 111913](https://github.com/user-attachments/assets/70d08864-aa39-4e64-8b38-f8b62e598632)
 
 
 ### Test Data Root Mean Squared Error
-![Screenshot 2024-09-09 104121](https://github.com/user-attachments/assets/09bed6aa-ec17-474b-ac6d-679b6e06161b)
+
+![Screenshot 2024-09-09 111927](https://github.com/user-attachments/assets/4a359020-0e92-41df-8c75-80a449e0028c)
 
 
 
 
 ### New Sample Data Prediction
 
-![Screenshot 2024-09-09 104149](https://github.com/user-attachments/assets/c6a63d9c-1e99-49c8-8adc-c847bcaa4a65)
+
+![Screenshot 2024-09-09 111934](https://github.com/user-attachments/assets/7ce52292-871f-46f2-8e7d-aebb53d781e1)
 
 
 ## RESULT
