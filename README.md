@@ -99,7 +99,7 @@ loss_df.plot()
 X_test1 = Scaler.transform(X_test)
 ai_brain.evaluate(X_test1,y_test)
 
-X_n1 = [[8]]
+X_n1 = [[1]]
 
 X_n1_5 = Scaler.transform(X_n1)
 
